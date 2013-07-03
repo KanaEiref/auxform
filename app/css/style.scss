@@ -1,0 +1,50 @@
+$backgroundColor:  #B3E3FF;
+$lightBlue: #B3E3FF;
+$veryLightBlue: #F1FCFF;
+ 
+$darkBlue: #096079;
+$white: white;
+$serif: 'Antic Slab';
+$sanSerif: 'Lucida Grande', Arial, Verdana, sans-serif;
+
+body {
+	background-color:  $backgroundColor;
+	width: 100%;
+	margin: 0px;
+	font-family: $serif;
+
+	
+}
+
+.container{
+		width: 90%;
+		margin-top: 0px;
+		margin-left: 5%;
+		margin-right: 5%;
+		background-color: $backgroundColor;
+	
+	}
+
+
+
+header {
+
+	border-top-left-radius: 10px 5px;
+	border-top-right-radius: 10px 5px;
+	background-color: $darkBlue;
+	margin: 3% 3% 3% 0%;
+	padding: 1% 3% 3% 3%;
+
+	h1{
+		color: $veryLightBlue;
+		font-family: $serif;
+
+	}
+
+	h2 {
+		color: $lightBlue;
+		font-family: $sanSerif;
+		font-size: 1em;
+
+	}
+}
