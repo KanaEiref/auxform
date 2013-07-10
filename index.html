@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 
     <head>
         <meta charset="utf-8">
@@ -10,29 +7,20 @@
         <title>kana's AUX challenge form</title>
         <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
 
-       <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/main.css"> 
-        <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="assets/css/reset.css">
+
+        <script src="assets/js/vendor/modernizr.custom.55217.js"></script>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+        
 
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
         <div class="container">
-          
-
-                <header>
+        <header>
 	<h1>
 		Sign up for Whoo!
 	</h1>
@@ -40,26 +28,52 @@
 	</h2>
 
 </header>
-<section>
-<!--
-	<form>
-		<fieldset>
-			<legend>Legend Name xxxxxxxxxxxx</legend>
+<section id="inputSection">
+
+<form>
+	<fieldset>
+		
+		<legend>First, name your portfolio</legend>
+		
+			<label for="portfolioTitle">Portfolio title</label>
+			<input type="text" name="portfolioTitle" />
+			<label for="portfolioAddress">Portfolio Address</label>
+			<input type="url" name="portfolioAddress" />
+			<lable for="portfolioAddress">.sample.com</label>
+		
+	</fieldset>
+
+	<fieldset>
+		
+		<legend>Now, enter your account details</legend>
+		
 			<label for="name">Name</label>
 			<input type="text" name="name" />
-		</fieldset>
-	</form> 
--->
+			<label for="email">Email</label>
+			<input type="text" name="email" />
+			<legend>NOTE: We'll never share your email, promise.</legend>
+			<lable for="password">Password</lable>
+			<input type="password" name="password" />
+			<input type="checkbox" name="showPassword" value="Show Password">Show Password</input>
+		
+	</fieldset>
+
+	<fieldset>
+		
+		<legend>Finally, enter your payment information<span id="paypal">Use Paypal</span></legend>
+		
+				<label for="name">Name</label>
+				<input type="text" name="name" />
+	
+	</fieldset>
+</form> 
+
 </section>
 <footer>
 </footer>
 
 
-
-            
-    
         </div> <!-- /container -->
-
         <script src="assets/js/validate.min.js"></script>
 
     </body>

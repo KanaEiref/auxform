@@ -10,16 +10,46 @@ title: kana's AUX challenge form
 	</h2>
 
 </header>
-<section>
-<!--
-	<form>
-		<fieldset>
-			<legend>Legend Name xxxxxxxxxxxx</legend>
+<section id="inputSection">
+
+<form>
+	<fieldset>
+		
+		<legend>First, name your portfolio</legend>
+		
+			<label for="portfolioTitle">Portfolio title</label>
+			<input type="text" name="portfolioTitle" />
+			<label for="portfolioAddress">Portfolio Address</label>
+			<input type="url" name="portfolioAddress" />
+			<lable for="portfolioAddress">.sample.com</label>
+		
+	</fieldset>
+
+	<fieldset>
+		
+		<legend>Now, enter your account details</legend>
+		
 			<label for="name">Name</label>
 			<input type="text" name="name" />
-		</fieldset>
-	</form> 
--->
+			<label for="email">Email</label>
+			<input type="text" name="email" />
+			<legend>NOTE: We'll never share your email, promise.</legend>
+			<lable for="password">Password</lable>
+			<input type="password" name="password" />
+			<input type="checkbox" name="showPassword" value="Show Password">Show Password</input>
+		
+	</fieldset>
+
+	<fieldset>
+		
+		<legend>Finally, enter your payment information<span id="paypal">Use Paypal</span></legend>
+		
+				<label for="name">Name</label>
+				<input type="text" name="name" />
+	
+	</fieldset>
+</form> 
+
 </section>
 <footer>
 </footer>

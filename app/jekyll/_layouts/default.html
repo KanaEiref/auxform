@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 
     <head>
         <meta charset="utf-8">
@@ -10,34 +7,21 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
 
-       <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/main.css"> 
-        <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="assets/css/reset.css">
+
+        <script src="assets/js/vendor/modernizr.custom.55217.js"></script>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+        
 
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
         <div class="container">
-          
-
-                {{ content }}
-
-            
-    
+        {{ content }}
         </div> <!-- /container -->
-
         <script src="assets/js/validate.min.js"></script>
 
     </body>

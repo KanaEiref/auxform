@@ -2,7 +2,8 @@ body {
   background-color: #b3e3ff;
   width: 100%;
   margin: 0px;
-  font-family: "Antic Slab"; }
+  font-family: "Antic Slab", "Times New Roman";
+  font-size: 100%; }
 
 .container {
   width: 90%;
@@ -15,12 +16,86 @@ header {
   border-top-left-radius: 10px 5px;
   border-top-right-radius: 10px 5px;
   background-color: #096079;
-  margin: 3% 3% 3% 0%;
-  padding: 1% 3% 3% 3%; }
+  margin: 3% 0% 0% 0%;
+  padding: 3% 3% 3% 3%; }
   header h1 {
     color: #f1fcff;
-    font-family: "Antic Slab"; }
+    font-family: "Antic Slab", "Times New Roman";
+    font-size: 2em; }
   header h2 {
     color: #b3e3ff;
     font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+    font-size: 0.9em;
+    padding-top: 8px; }
+
+#inputSection {
+  background-color: white;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 10px;
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+  font-size: 0.85em;
+  color: #5a5a5a; }
+  #inputSection label, #inputSection input {
+    display: block;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+    margin-top: 2%; }
+  #inputSection input {
+    width: 100%;
+    border-radius: 7px;
     font-size: 1em; }
+  #inputSection fieldset {
+    margin: 3% 3% 3% 3%; }
+    #inputSection fieldset > legend {
+      font-family: "Antic Slab", "Times New Roman";
+      color: #096079;
+      font-size: 1.4em;
+      padding-bottom: 2%; }
+  #inputSection .grayArea {
+    background-color: #f3f5f5;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    border-radius: 8px; }
+  #inputSection #paypal {
+    text-align: right;
+    color: #6dd0ff;
+    font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+    font-size: 0.8em; }
+  #inputSection .numbers {
+    font-family: "Times New Roman";
+    font-size: 1em;
+    color: white;
+    border-radius: 999px;
+    /*behavior: url(PIE.htc);*/
+    width: 25px;
+    line-height: 25px;
+    height: 25px;
+    padding: 4px;
+    padding-top: 5px;
+    margin-right: 45px;
+    background: #52a3d4;
+    border: 7px solid white;
+    text-align: center;
+    margin-left: -50px; }
+  #inputSection legend:before {
+    content: "1";
+    display: inline-block;
+    font-family: "Times New Roman";
+    font-size: 1em;
+    color: white;
+    border-radius: 999px;
+    /*behavior: url(PIE.htc);*/
+    width: 25px;
+    line-height: 25px;
+    height: 25px;
+    padding: 4px;
+    padding-top: 5px;
+    margin-right: 45px;
+    background: #52a3d4;
+    border: 7px solid white;
+    text-align: center;
+    margin-left: -50px; }

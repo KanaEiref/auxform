@@ -1,18 +1,32 @@
 $backgroundColor:  #B3E3FF;
 $lightBlue: #B3E3FF;
 $veryLightBlue: #F1FCFF;
+$grayBackground: #F3F5F5;
+$lightCaptionGray: #9A9AA0;
+$formTextColor: #5A5A5A;
  
 $darkBlue: #096079;
-$white: white;
-$serif: 'Antic Slab';
+$white: #ffffff;
+$paypalBlue: #6DD0FF;
+$circleBlue: #52A3D4;
+
+$serif: 'Antic Slab', 'Times New Roman';
 $sanSerif: 'Lucida Grande', Arial, Verdana, sans-serif;
+$numberFont: "Times New Roman";
+
+@mixin verticalCenter($height: 25px) {
+	line-height: $height;
+	height: $height;
+}
+
+
 
 body {
 	background-color:  $backgroundColor;
 	width: 100%;
 	margin: 0px;
 	font-family: $serif;
-
+	font-size: 100%;
 	
 }
 
@@ -22,29 +36,141 @@ body {
 		margin-left: 5%;
 		margin-right: 5%;
 		background-color: $backgroundColor;
-	
+
 	}
 
-
-
 header {
-
 	border-top-left-radius: 10px 5px;
 	border-top-right-radius: 10px 5px;
 	background-color: $darkBlue;
-	margin: 3% 3% 3% 0%;
-	padding: 1% 3% 3% 3%;
+	margin: 3% 0% 0% 0%;
+	padding: 3% 3% 3% 3%;
+
 
 	h1{
 		color: $veryLightBlue;
 		font-family: $serif;
-
+		font-size: 2em;
 	}
 
 	h2 {
 		color: $lightBlue;
 		font-family: $sanSerif;
-		font-size: 1em;
-
+		font-size: 0.9em;
+		padding-top: 8px;
 	}
 }
+
+#inputSection{
+
+	background-color: $white;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding: 10px;
+	font-family: $sanSerif;
+	font-size: 0.85em;
+	color: $formTextColor;
+
+	label, input{
+		display: block;
+		padding-top: 0.5%;
+		padding-bottom: 1%;
+		margin-top: 2%;
+	}
+
+	input{
+		width: 100%;
+		border-radius: 7px;
+		font-size: 1em;
+	}
+
+
+	fieldset{
+		margin: 3% 3% 3% 3%;
+
+		>legend{
+			font-family: $serif;
+			color: $darkBlue;
+			font-size: 1.4em;
+			padding-bottom: 2%;
+		}
+	
+	}
+
+	.grayArea{
+		background-color: $grayBackground;
+		padding-top: 2%;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-bottom: 3%;
+		border-radius: 8px;
+
+	}
+
+	#paypal{
+		text-align: right;
+		color: $paypalBlue;
+		font-family: $sanSerif;
+		font-size: 0.8em;
+	}
+
+	.numbers{
+		font-family: $numberFont;
+		font-size: 1em;
+		color: $white;
+
+		border-radius: 999px;
+    	/*behavior: url(PIE.htc);*/
+
+	    width: 25px;
+	    @include verticalCenter(25px);
+
+	    padding: 4px;
+	    padding-top: 5px;
+	    margin-right: 45px;
+
+	    
+	    background: $circleBlue;
+	    border: 7px solid $white;
+
+	    text-align: center;
+
+	    margin-left: -50px;
+	}
+
+	legend:before
+	{
+		content: "1";
+		display: inline-block;
+		font-family: $numberFont;
+		font-size: 1em;
+		color: $white;
+
+		border-radius: 999px;
+    	/*behavior: url(PIE.htc);*/
+
+	    width: 25px;
+	    @include verticalCenter(25px);
+
+	    padding: 4px;
+	    padding-top: 5px;
+	    margin-right: 45px;
+
+	    
+	    background: $circleBlue;
+	    border: 7px solid $white;
+
+	    text-align: center;
+
+	    margin-left: -50px;
+	}
+
+	
+}
+
+
+
+
+
+
