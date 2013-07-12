@@ -9,13 +9,20 @@
 
 
         <link rel="stylesheet" href="assets/css/reset.css">
-
-        <script src="assets/js/vendor/modernizr.custom.55217.js"></script>
-
-        <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+     
+        <script src="assets/js/vendor/modernizr.custom.88284.js"></script>
+
+        <script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+        <script src="assets/js/vendor/jquery.validate.js"></script>
+
         <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
-        
+
 
     </head>
     <body>
@@ -30,42 +37,127 @@
 </header>
 <section id="inputSection">
 
-<form>
-	<fieldset>
+<form id="kanaform">
+	<fieldset class="portfoilioSec">
 		
 		<legend>First, name your portfolio</legend>
 		
-			<label for="portfolioTitle">Portfolio title</label>
-			<input type="text" name="portfolioTitle" />
-			<label for="portfolioAddress">Portfolio Address</label>
-			<input type="url" name="portfolioAddress" />
-			<lable for="portfolioAddress">.sample.com</label>
+		    <div class="inputWrapper">
+				<label id="portfolioTitle" for="portfolioTitle">Portfolio title</label>
+				<input type="text" name="portfolioTitle" />
+			</div>
+			<div class="inputWrapper">
+				<label for="portfolioAddress">Portfolio Address</label>
+				<input type="url" id="portfolioAddress" name="portfolioAddress" />
+				<label id="sample" for="portfolioAddress">.sample.com</label>
+
+			</div>
+			
 		
 	</fieldset>
 
-	<fieldset>
+	<fieldset class="accountSec">
 		
 		<legend>Now, enter your account details</legend>
-		
-			<label for="name">Name</label>
-			<input type="text" name="name" />
-			<label for="email">Email</label>
-			<input type="text" name="email" />
-			<legend>NOTE: We'll never share your email, promise.</legend>
-			<lable for="password">Password</lable>
-			<input type="password" name="password" />
-			<input type="checkbox" name="showPassword" value="Show Password">Show Password</input>
+			<div class="inputWrapper">
+				<label for="name">Name</label>
+				<input type="text" name="name" />
+			</div>
+			<div class="inputWrapper">
+				<label for="email">Email</label>
+				<input type="text" name="email" />
+				<p id="notes">NOTE: We'll never share your email, promise.</p>
+			</div>
+			<div class="inputWrapper">
+				<label for="password">Password</label>
+				<input type="password" name="password" />
+			</div>
+			<div class="inputWrapper">
+				
+				<label for="showPassword" class="checkbox">
+					<input type="checkbox" name="showPassword" value="Show Password" id="showpasswordCheckbox"/>Show Password</label>
+			</div>
 		
 	</fieldset>
 
-	<fieldset>
+	<fieldset class="paymentSec">
 		
-		<legend>Finally, enter your payment information<span id="paypal">Use Paypal</span></legend>
+		<legend>Finally, enter your payment information <a href="#" id="paypal" > Use Paypal</a></legend> 
 		
-				<label for="name">Name</label>
-				<input type="text" name="name" />
-	
+		<div class="inputWrapper" id="cardNumberWrapper">
+				<label for="cardNumber">Card number</label>
+				<input type="text" name="cardNumber" />
+		</div>
+		<!-- 4 crads -->
+		<div class="inputWrapper cards">
+			
+			<input type="radio" id="amexcard" name="amexcard">
+			<label for="amexcard"></lable>
+		</div>
+		<div class="inputWrapper cards">
+			
+			<input type="radio" id="visaCard" name="visaCard">
+			<label for="visaCard"></lable>
+		</div>
+		<div class="inputWrapper cards">
+			
+			<input type="radio" id="discoverCard" name="discoverCard">
+			<label for="discoverCard"></lable>
+		</div>
+		<div class="inputWrapper cards">
+			
+			<input type="radio" id="masterCard" name="masterCard">
+			<label for="masterCard"></lable>
+		</div>
+
+		<div class="inputWrapper" id="securityCodeWrapper">
+			<label for="securityCode">Security code</label>
+			<input type="text" name="securityCode" />
+		</div>
+		<div class="inputWrapper" id="backWrapper">
+			<input type="radio" name="cardback" />
+			<label for="cardback"></label>
+		</div>
+
+		<div class="inputWrapper" id="monthWrapper">
+			<label for="month">Expiration date</label>
+			<select>
+				<option value="0">Month</option>
+				<option value="1">01</option>
+				<option value="2">02</option>
+				<option value="3">03</option>
+				<option value="4">04</option>
+				<option value="5">05</option>
+				<option value="6">06</option>
+				<option value="7">07</option>
+				<option value="8">08</option>
+				<option value="9">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
+		<div class="inputWrapper" id="yearWrapper">
+			<label for="year"></label>
+			<!-- <input type="number" value="year"  /> -->
+			<select>
+				<option value="0">Year</option>
+				<option value="2013">2013</option>
+				<option value="2014">2014</option>
+				<option value="2015">2015</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				
+			</select>
+		</div>	
 	</fieldset>
+	<input type="submit" name="create" value="Create your portfolio" />
 </form> 
 
 </section>
@@ -74,7 +166,9 @@
 
 
         </div> <!-- /container -->
-        <script src="assets/js/validate.min.js"></script>
+        
+        <script src="assets/js/kanascript.js"></script>
+        
 
     </body>
 </html>

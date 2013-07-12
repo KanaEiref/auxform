@@ -9,6 +9,9 @@ $darkBlue: #096079;
 $white: #ffffff;
 $paypalBlue: #6DD0FF;
 $circleBlue: #52A3D4;
+$noteColor: #a2a2b2;
+$buttonColor: #8CA90C;
+$sampleBG: #FAFAFA;
 
 $serif: 'Antic Slab', 'Times New Roman';
 $sanSerif: 'Lucida Grande', Arial, Verdana, sans-serif;
@@ -18,8 +21,6 @@ $numberFont: "Times New Roman";
 	line-height: $height;
 	height: $height;
 }
-
-
 
 body {
 	background-color:  $backgroundColor;
@@ -61,7 +62,7 @@ header {
 	}
 }
 
-#inputSection{
+form{
 
 	background-color: $white;
 	margin-top: 0px;
@@ -72,103 +73,281 @@ header {
 	font-size: 0.85em;
 	color: $formTextColor;
 
-	label, input{
-		display: block;
-		padding-top: 0.5%;
-		padding-bottom: 1%;
-		margin-top: 2%;
-	}
-
-	input{
+	label[for="portfolioAddress"]{
 		width: 100%;
+		float: left;
+	}
+	input[name="portfolioAddress"]{
+		width: 60%;
+		float: left;
+	}
+	label[id="sample"]{
+		width: 40%;
+		float: right;
+		margin-top: -27px;
+		margin-left: 20px;
+		padding-left: 20px;
+		text-align: center;
+		/*background-color: $sampleBG;*/
+
+	}
+	input, select{
+
+		padding-top: 10px; 
+		
 		border-radius: 7px;
 		font-size: 1em;
+		width: 100%;
+
+
 	}
+
+	/* this order is important, to override the above input padding-top value for showPassword Checkbox */
+	input[type="checkbox"]{
+		/* these 2 linds below are for lining up with "Show Password" label on the same line*/
+		margin-top: -1px; 
+		padding-top: 1px;
+		float:left;
+	   
+	}	
 
 
 	fieldset{
+		position: relative;
 		margin: 3% 3% 3% 3%;
-
-		>legend{
-			font-family: $serif;
-			color: $darkBlue;
-			font-size: 1.4em;
-			padding-bottom: 2%;
-		}
-	
-	}
-
-	.grayArea{
 		background-color: $grayBackground;
-		padding-top: 2%;
+		padding-top: 1%;
 		padding-left: 5%;
 		padding-right: 5%;
 		padding-bottom: 3%;
 		border-radius: 8px;
 
+		>legend{
+			font-family: $serif;
+			color: $darkBlue;
+			font-size: 1.4em;
+
+			position: absolute;
+			top: -35px;
+			left: -15px;
+			padding-bottom: 10px;
+
+
+		}
+	
+		&.portfoilioSec legend:before
+			{ content: "1";	}
+
+		&.accountSec legend:before
+			{ content: "2";	}
+
+		&.paymentSec legend:before
+			{ content: "3";	}
+
+		legend:before{
+				display: inline-block;
+				font-family: $numberFont;
+				font-size: 1em;
+				color: $white;
+
+				border-radius: 999px;
+		    	
+
+			    width: 25px;
+			    @include verticalCenter(25px);
+
+			    padding: 4px;
+			    padding-top: 5px;
+
+			    margin-right: 25px;
+
+			    
+			    background: $circleBlue;
+			    border: 7px solid $white;
+
+			    text-align: center;
+
+			    margin-left: -50px;
+			}
+
+		input[name="password"] {
+			/*float: left;*/
+
+		}
+
+		input[name="showPassword"]{
+			width:3%;
+			float: left;
+			display: inline;
+		}
+
+		&.paymentSec #cardNumberWrapper
+		{
+			width: 50%;
+			float: left;
+		}
+
+		&.paymentSec .cards
+		{
+			
+			float: left;
+		}
+
+		/* for cards */
+		input[type="radio"]{
+			display: none;
+		}
+
+		label[for="amexcard"]
+		{
+
+			background: url('../images/sprite.png') no-repeat 0 -122px;
+			width: 45px;
+			height: 32px;
+		    display:inline-block;
+		    padding: 0 0 0 0px;
+		    margin-left: 10px;
+		}
+
+		label[for="visaCard"]
+		{
+
+			background: url('../images/sprite.png') no-repeat -48px -122px;
+			width: 45px;
+			height: 32px;
+		    display:inline-block;
+		    padding: 0 0 0 0px;
+		    margin-left: 10px;
+		}
+
+		label[for="discoverCard"]
+		{
+
+			background: url('../images/sprite.png') no-repeat -96px -122px;
+			width: 45px;
+			height: 32px;
+		    display:inline-block;
+		    padding: 0 0 0 0px;
+		    margin-left: 10px;
+		}
+
+		label[for="masterCard"]
+		{
+
+			background: url('../images/sprite.png') no-repeat -144px -122px;
+			width: 45px;
+			height: 32px;
+		    display:inline-block;
+		    padding: 0 0 0 0px;
+		    margin-left: 10px;
+		}
+
+		.cards{
+			margin-top: 15px;
+		}
+
+		&.paymentSec #securityCodeWrapper{
+			clear: both;
+			float: left;
+			width: 30%;
+		}
+
+		&.paymentSec #backWrapper{
+
+			float: left;	
+		}
+
+		&.paymentSec #monthWrapper{
+			clear: both;
+			float: left;
+		}
+
+		&.paymentSec #yearWrapper{
+			float: left;
+			margin-left: 10px;
+			margin-top: 14px;
+			width: 20%;
+
+		}
+
+
+
+		label[for="cardback"]{
+			background: url('../images/sprite.png') no-repeat 0px -374px;
+			width: 62px;
+			height: 32px;
+		    display:inline-block;
+		    padding: 0 0 0 0px;
+		    margin-left: 10px;
+		    margin-top: 15px;
+
+		}
+
+	}  /* end of fieldset */ 
+	input[type="submit"]{
+		background-color: $buttonColor;
+		width: 30%;
+		color: $white;
+		height: 50px;
+		position: relative;
+		left: 35%;
+		padding-top: 1px;
+	}
+		
+
+	.paymentSec 
+	{
+		clear: both;
+		
+		
 	}
 
-	#paypal{
-		text-align: right;
+	.paymentSec legend{
+		
+		width: 100%;
+		float: left;
+		
+	}
+}
+/*  end of form */
+
+a[id="paypal"]{
+	text-decoration: none;
+	float: right;
+}
+
+#paypal{
+		
 		color: $paypalBlue;
 		font-family: $sanSerif;
-		font-size: 0.8em;
-	}
-
-	.numbers{
-		font-family: $numberFont;
 		font-size: 1em;
-		color: $white;
+		padding-top: 15px;
+}
 
-		border-radius: 999px;
-    	/*behavior: url(PIE.htc);*/
+#notes {
+			padding: 5px 0px 15px 0px;
+			color: $noteColor;
+}
 
-	    width: 25px;
-	    @include verticalCenter(25px);
+#showpass{
+			width:97%;
+			float: right;
+			display: inline;
+}	
 
-	    padding: 4px;
-	    padding-top: 5px;
-	    margin-right: 45px;
 
-	    
-	    background: $circleBlue;
-	    border: 7px solid $white;
+.inputWrapper{
+	padding-top: 10px;
+	padding-bottom: 10px;
+		
+}
 
-	    text-align: center;
 
-	    margin-left: -50px;
-	}
 
-	legend:before
-	{
-		content: "1";
-		display: inline-block;
-		font-family: $numberFont;
-		font-size: 1em;
-		color: $white;
 
-		border-radius: 999px;
-    	
-
-	    width: 25px;
-	    @include verticalCenter(25px);
-
-	    padding: 4px;
-	    padding-top: 5px;
-
-	    margin-right: 45px;
-
-	    
-	    background: $circleBlue;
-	    border: 7px solid $white;
-
-	    text-align: center;
-
-	    margin-left: -50px;
-	}
 
 	
-}
+
 
 
 

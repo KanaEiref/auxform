@@ -28,7 +28,7 @@ header {
     font-size: 0.9em;
     padding-top: 8px; }
 
-#inputSection {
+form {
   background-color: white;
   margin-top: 0px;
   margin-right: 0px;
@@ -36,65 +36,172 @@ header {
   padding: 10px;
   font-family: "Lucida Grande", Arial, Verdana, sans-serif;
   font-size: 0.85em;
-  color: #5a5a5a; }
-  #inputSection label, #inputSection input {
-    display: block;
-    padding-top: 0.5%;
-    padding-bottom: 1%;
-    margin-top: 2%; }
-  #inputSection input {
+  color: #5a5a5a;
+  /* this order is important, to override the above input padding-top value for showPassword Checkbox */
+  /* end of fieldset */ }
+  form label[for="portfolioAddress"] {
     width: 100%;
+    float: left; }
+  form input[name="portfolioAddress"] {
+    width: 60%;
+    float: left; }
+  form label[id="sample"] {
+    width: 40%;
+    float: right;
+    margin-top: -27px;
+    margin-left: 20px;
+    padding-left: 20px;
+    text-align: center;
+    /*background-color: $sampleBG;*/ }
+  form input, form select {
+    padding-top: 10px;
     border-radius: 7px;
-    font-size: 1em; }
-  #inputSection fieldset {
-    margin: 3% 3% 3% 3%; }
-    #inputSection fieldset > legend {
-      font-family: "Antic Slab", "Times New Roman";
-      color: #096079;
-      font-size: 1.4em;
-      padding-bottom: 2%; }
-  #inputSection .grayArea {
+    font-size: 1em;
+    width: 100%; }
+  form input[type="checkbox"] {
+    /* these 2 linds below are for lining up with "Show Password" label on the same line*/
+    margin-top: -1px;
+    padding-top: 1px;
+    float: left; }
+  form fieldset {
+    position: relative;
+    margin: 3% 3% 3% 3%;
     background-color: #f3f5f5;
-    padding-top: 2%;
+    padding-top: 1%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 3%;
-    border-radius: 8px; }
-  #inputSection #paypal {
-    text-align: right;
-    color: #6dd0ff;
-    font-family: "Lucida Grande", Arial, Verdana, sans-serif;
-    font-size: 0.8em; }
-  #inputSection .numbers {
-    font-family: "Times New Roman";
-    font-size: 1em;
+    border-radius: 8px;
+    /* for cards */ }
+    form fieldset > legend {
+      font-family: "Antic Slab", "Times New Roman";
+      color: #096079;
+      font-size: 1.4em;
+      position: absolute;
+      top: -35px;
+      left: -15px;
+      padding-bottom: 10px; }
+    form fieldset.portfoilioSec legend:before {
+      content: "1"; }
+    form fieldset.accountSec legend:before {
+      content: "2"; }
+    form fieldset.paymentSec legend:before {
+      content: "3"; }
+    form fieldset legend:before {
+      display: inline-block;
+      font-family: "Times New Roman";
+      font-size: 1em;
+      color: white;
+      border-radius: 999px;
+      width: 25px;
+      line-height: 25px;
+      height: 25px;
+      padding: 4px;
+      padding-top: 5px;
+      margin-right: 25px;
+      background: #52a3d4;
+      border: 7px solid white;
+      text-align: center;
+      margin-left: -50px; }
+    form fieldset input[name="password"] {
+      /*float: left;*/ }
+    form fieldset input[name="showPassword"] {
+      width: 3%;
+      float: left;
+      display: inline; }
+    form fieldset.paymentSec #cardNumberWrapper {
+      width: 50%;
+      float: left; }
+    form fieldset.paymentSec .cards {
+      float: left; }
+    form fieldset input[type="radio"] {
+      display: none; }
+    form fieldset label[for="amexcard"] {
+      background: url("../images/sprite.png") no-repeat 0 -122px;
+      width: 45px;
+      height: 32px;
+      display: inline-block;
+      padding: 0 0 0 0px;
+      margin-left: 10px; }
+    form fieldset label[for="visaCard"] {
+      background: url("../images/sprite.png") no-repeat -48px -122px;
+      width: 45px;
+      height: 32px;
+      display: inline-block;
+      padding: 0 0 0 0px;
+      margin-left: 10px; }
+    form fieldset label[for="discoverCard"] {
+      background: url("../images/sprite.png") no-repeat -96px -122px;
+      width: 45px;
+      height: 32px;
+      display: inline-block;
+      padding: 0 0 0 0px;
+      margin-left: 10px; }
+    form fieldset label[for="masterCard"] {
+      background: url("../images/sprite.png") no-repeat -144px -122px;
+      width: 45px;
+      height: 32px;
+      display: inline-block;
+      padding: 0 0 0 0px;
+      margin-left: 10px; }
+    form fieldset .cards {
+      margin-top: 15px; }
+    form fieldset.paymentSec #securityCodeWrapper {
+      clear: both;
+      float: left;
+      width: 30%; }
+    form fieldset.paymentSec #backWrapper {
+      float: left; }
+    form fieldset.paymentSec #monthWrapper {
+      clear: both;
+      float: left; }
+    form fieldset.paymentSec #yearWrapper {
+      float: left;
+      margin-left: 10px;
+      margin-top: 14px;
+      width: 20%; }
+    form fieldset label[for="cardback"] {
+      background: url("../images/sprite.png") no-repeat 0px -374px;
+      width: 62px;
+      height: 32px;
+      display: inline-block;
+      padding: 0 0 0 0px;
+      margin-left: 10px;
+      margin-top: 15px; }
+  form input[type="submit"] {
+    background-color: #8ca90c;
+    width: 30%;
     color: white;
-    border-radius: 999px;
-    /*behavior: url(PIE.htc);*/
-    width: 25px;
-    line-height: 25px;
-    height: 25px;
-    padding: 4px;
-    padding-top: 5px;
-    margin-right: 45px;
-    background: #52a3d4;
-    border: 7px solid white;
-    text-align: center;
-    margin-left: -50px; }
-  #inputSection legend:before {
-    content: "1";
-    display: inline-block;
-    font-family: "Times New Roman";
-    font-size: 1em;
-    color: white;
-    border-radius: 999px;
-    width: 25px;
-    line-height: 25px;
-    height: 25px;
-    padding: 4px;
-    padding-top: 5px;
-    margin-right: 45px;
-    background: #52a3d4;
-    border: 7px solid white;
-    text-align: center;
-    margin-left: -50px; }
+    height: 50px;
+    position: relative;
+    left: 35%;
+    padding-top: 1px; }
+  form .paymentSec {
+    clear: both; }
+  form .paymentSec legend {
+    width: 100%;
+    float: left; }
+
+/*  end of form */
+a[id="paypal"] {
+  text-decoration: none;
+  float: right; }
+
+#paypal {
+  color: #6dd0ff;
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif;
+  font-size: 1em;
+  padding-top: 15px; }
+
+#notes {
+  padding: 5px 0px 15px 0px;
+  color: #a2a2b2; }
+
+#showpass {
+  width: 97%;
+  float: right;
+  display: inline; }
+
+.inputWrapper {
+  padding-top: 10px;
+  padding-bottom: 10px; }

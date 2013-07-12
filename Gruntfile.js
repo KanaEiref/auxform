@@ -54,8 +54,8 @@ module.exports = function(grunt) {
       
       files: {
 
-          dest: desPath + 'js/validate.min.js',
-          src: sourcePath + 'js/validate.js'
+          dest: desPath + 'js/kanascript.min.js',
+          src: sourcePath + 'js/kanascript.js'
           
         }
 
