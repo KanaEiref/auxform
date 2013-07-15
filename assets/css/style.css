@@ -168,6 +168,25 @@ form {
       padding: 0 0 0 0px;
       margin-left: 10px;
       margin-top: 15px; }
+    form fieldset label#lock {
+      clear: both;
+      float: right;
+      background: url("../images/sprite.png") no-repeat -60px -499px;
+      width: 14px;
+      height: 19px; }
+    form fieldset label#lock.pass {
+      clear: both;
+      float: right;
+      background: url("../images/sprite.png") no-repeat -31px -499px;
+      width: 19px;
+      height: 19px; }
+    form fieldset label#lock.notPass {
+      clear: both;
+      float: right;
+      background: none;
+      background: url("../images/sprite.png") no-repeat -2px -499px;
+      width: 19px;
+      height: 19px; }
   form input[type="submit"] {
     background-color: #8ca90c;
     width: 30%;
@@ -205,3 +224,31 @@ a[id="paypal"] {
 .inputWrapper {
   padding-top: 10px;
   padding-bottom: 10px; }
+
+input:focus {
+  border: 1px dotted black; }
+
+input.error, select.error {
+  border: 1px dotted red; }
+
+label.error {
+  color: red;
+  font-style: italic; }
+
+label[for="cardback"].isAmexcard {
+  background: url("../images/sprite.png") no-repeat 0 -331px;
+  width: 70px;
+  height: 33px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  margin-left: 10px;
+  margin-top: 15px; }
+
+label[for="cardback"].isNotAmexcard {
+  background: url("../images/sprite.png") no-repeat 0px -374px;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  margin-left: 10px;
+  margin-top: 15px; }

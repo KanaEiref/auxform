@@ -9,19 +9,17 @@
 
 
         <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+         <link rel="stylesheet" href="assets/css/style.css">
+         <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
 
      
-        <script src="assets/js/vendor/modernizr.custom.88284.js"></script>
+        <script src="assets/js/vendor/modernizr.custom.04595.js"></script>
 
-        <script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
-        <script src="assets/js/vendor/jquery.validate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+        <script src="assets/js/vendor/jquery.validate.min.js"></script>    
 
-        <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+
+        
 
 
     </head>
@@ -44,11 +42,11 @@
 		
 		    <div class="inputWrapper">
 				<label id="portfolioTitle" for="portfolioTitle">Portfolio title</label>
-				<input type="text" name="portfolioTitle" />
+				<input type="text" name="portfolioTitle" required autofocus/>
 			</div>
 			<div class="inputWrapper">
 				<label for="portfolioAddress">Portfolio Address</label>
-				<input type="url" id="portfolioAddress" name="portfolioAddress" />
+				<input type="url" name="portfolioAddress"  required/>
 				<label id="sample" for="portfolioAddress">.sample.com</label>
 
 			</div>
@@ -61,16 +59,16 @@
 		<legend>Now, enter your account details</legend>
 			<div class="inputWrapper">
 				<label for="name">Name</label>
-				<input type="text" name="name" />
+				<input type="text" name="name" required/>
 			</div>
 			<div class="inputWrapper">
 				<label for="email">Email</label>
-				<input type="text" name="email" />
+				<input type="text" name="email" required/>
 				<p id="notes">NOTE: We'll never share your email, promise.</p>
 			</div>
 			<div class="inputWrapper">
 				<label for="password">Password</label>
-				<input type="password" name="password" />
+				<input type="password" name="password" required />
 			</div>
 			<div class="inputWrapper">
 				
@@ -86,43 +84,43 @@
 		
 		<div class="inputWrapper" id="cardNumberWrapper">
 				<label for="cardNumber">Card number</label>
-				<input type="text" name="cardNumber" />
+				<input type="text" id="cardNumber" name="cardNumber" required/>
 		</div>
 		<!-- 4 crads -->
 		<div class="inputWrapper cards">
 			
 			<input type="radio" id="amexcard" name="amexcard">
-			<label for="amexcard"></lable>
+			<label for="amexcard" id="lamexcard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
 			<input type="radio" id="visaCard" name="visaCard">
-			<label for="visaCard"></lable>
+			<label for="visaCard" id="lvisaCard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
 			<input type="radio" id="discoverCard" name="discoverCard">
-			<label for="discoverCard"></lable>
+			<label for="discoverCard" id="ldiscoverCard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
 			<input type="radio" id="masterCard" name="masterCard">
-			<label for="masterCard"></lable>
+			<label for="masterCard" id="lmasterCard"></lable>
 		</div>
 
 		<div class="inputWrapper" id="securityCodeWrapper">
 			<label for="securityCode">Security code</label>
-			<input type="text" name="securityCode" />
+			<input type="text" id="securityCode" name="securityCode" required />
 		</div>
 		<div class="inputWrapper" id="backWrapper">
 			<input type="radio" name="cardback" />
-			<label for="cardback"></label>
+			<label for="cardback" id="lcardBack"></label>
 		</div>
 
 		<div class="inputWrapper" id="monthWrapper">
 			<label for="month">Expiration date</label>
-			<select>
-				<option value="0">Month</option>
+			<select name="monthList" id="monthList" required>
+				<option value="month">Month</option>
 				<option value="1">01</option>
 				<option value="2">02</option>
 				<option value="3">03</option>
@@ -140,8 +138,8 @@
 		<div class="inputWrapper" id="yearWrapper">
 			<label for="year"></label>
 			<!-- <input type="number" value="year"  /> -->
-			<select>
-				<option value="0">Year</option>
+			<select name="yearList" id="yearList" required>
+				<option value="year">Year</option>
 				<option value="2013">2013</option>
 				<option value="2014">2014</option>
 				<option value="2015">2015</option>
@@ -156,6 +154,7 @@
 				
 			</select>
 		</div>	
+		<label id="lock"></label>
 	</fieldset>
 	<input type="submit" name="create" value="Create your portfolio" />
 </form> 
@@ -167,7 +166,9 @@
 
         </div> <!-- /container -->
         
-        <script src="assets/js/kanascript.js"></script>
+
+
+        <script src="assets/js/kanascript.min.js"></script>
         
 
     </body>
