@@ -16,6 +16,7 @@ $sampleBG: #FAFAFA;
 $serif: 'Antic Slab', 'Times New Roman';
 $sanSerif: 'Lucida Grande', Arial, Verdana, sans-serif;
 $numberFont: "Times New Roman";
+$boxshadow: #cbcbcb;
 
 @mixin verticalCenter($height: 25px) {
 	line-height: $height;
@@ -28,6 +29,8 @@ body {
 	margin: 0px;
 	font-family: $serif;
 	font-size: 100%;
+	max-width: 700px;
+	counter-reset: section;
 	
 }
 
@@ -44,7 +47,7 @@ header {
 	border-top-left-radius: 10px 5px;
 	border-top-right-radius: 10px 5px;
 	background-color: $darkBlue;
-	margin: 3% 0% 0% 0%;
+	margin: 3% auto 0 auto;
 	padding: 3% 3% 3% 3%;
 
 
@@ -52,6 +55,8 @@ header {
 		color: $veryLightBlue;
 		font-family: $serif;
 		font-size: 2em;
+		margin-left: 25px;
+
 	}
 
 	h2 {
@@ -59,10 +64,30 @@ header {
 		font-family: $sanSerif;
 		font-size: 0.9em;
 		padding-top: 8px;
+		margin-left: 25px;
 	}
 }
 
+section{
+	margin: 0 auto;
+}
+
 form{
+
+	label {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: block;
+	}
+
+	input {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		width: 100%;
+		border-style:none;
+		border-radius: 5px;		
+		box-shadow: inset 0px 1px 0 0px $boxshadow;
+	}
 
 	background-color: $white;
 	margin-top: 0px;
@@ -74,33 +99,42 @@ form{
 	color: $formTextColor;
 
 	label[for="portfolioAddress"]{
-		width: 100%;
-		float: left;
+			width: 100%;
+		
 	}
+
 	input[name="portfolioAddress"]{
+		vertical-align: middle;
 		width: 60%;
 		float: left;
+		padding-left:0px;
+		padding-right: 0px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+
 	}
+
 	label[id="sample"]{
+		vertical-align: middle;
 		width: 40%;
 		float: right;
-		margin-top: -27px;
-		margin-left: 20px;
-		padding-left: 20px;
+
+
 		text-align: center;
-		/*background-color: $sampleBG;*/
+		background-color: $sampleBG;
+		height: 10px;
 
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		box-shadow: inset 0px 1px 0 0px $boxshadow,
+					inset 1px 0px $boxshadow;
+		margin-top: 2px;
+		color: $noteColor;
 	}
-	input, select{
 
-		padding-top: 10px; 
-		
-		border-radius: 7px;
-		font-size: 1em;
-		width: 100%;
-
-
-	}
+	
 
 	/* this order is important, to override the above input padding-top value for showPassword Checkbox */
 	input[type="checkbox"]{
@@ -114,13 +148,13 @@ form{
 
 	fieldset{
 		position: relative;
-		margin: 3% 3% 3% 3%;
+		margin: 10% 3% 3% 6%;
 		background-color: $grayBackground;
-		padding-top: 1%;
+		padding-top: 2%;
 		padding-left: 5%;
 		padding-right: 5%;
 		padding-bottom: 3%;
-		border-radius: 8px;
+		border-radius: 5px;
 
 		>legend{
 			font-family: $serif;
@@ -128,10 +162,11 @@ form{
 			font-size: 1.4em;
 
 			position: absolute;
-			top: -35px;
+			top: -65px;
 			left: -15px;
-			padding-bottom: 10px;
 
+			padding: 20px;
+			
 
 		}
 	
@@ -159,7 +194,7 @@ form{
 			    padding: 4px;
 			    padding-top: 5px;
 
-			    margin-right: 25px;
+			    margin-right: 18px;
 
 			    
 			    background: $circleBlue;
@@ -167,7 +202,7 @@ form{
 
 			    text-align: center;
 
-			    margin-left: -50px;
+			    margin-left: -70px;
 			}
 
 		input[name="password"] {
@@ -191,6 +226,7 @@ form{
 		{
 			
 			float: left;
+			margin-top: 35px;
 		}
 
 		/* for cards */
@@ -242,9 +278,6 @@ form{
 		    margin-left: 10px;
 		}
 
-		.cards{
-			margin-top: 15px;
-		}
 
 		&.paymentSec #securityCodeWrapper{
 			clear: both;
@@ -372,8 +405,7 @@ a[id="paypal"]{
 
 input:focus { border: 1px dotted black; }
 input.error, select.error{ border: 1px dotted red; }
-label.error {
-	
+label.error {	
 	color: red;
 	font-style: italic
 }
@@ -395,7 +427,17 @@ label[for="cardback"].isNotAmexcard{
 		    padding: 0 0 0 0px;
 		    margin-left: 10px;
 		    margin-top: 15px;
+}
 
+.center
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.hidden
+{
+	display: none;
 }
 
 

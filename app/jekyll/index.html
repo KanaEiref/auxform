@@ -10,7 +10,7 @@ title: kana's AUX challenge form
 	</h2>
 
 </header>
-<section id="inputSection">
+<section id="inputSection" class="center">
 
 <form id="kanaform">
 	<fieldset class="portfoilioSec">
@@ -18,12 +18,12 @@ title: kana's AUX challenge form
 		<legend>First, name your portfolio</legend>
 		
 		    <div class="inputWrapper">
-				<label id="portfolioTitle" for="portfolioTitle">Portfolio title</label>
-				<input type="text" name="portfolioTitle" required autofocus/>
+				<label  for="portfolioTitle">Portfolio title</label>
+				<input type="text" id="portfolioTitle" name="portfolioTitle" required />
 			</div>
 			<div class="inputWrapper">
 				<label for="portfolioAddress">Portfolio Address</label>
-				<input type="url" name="portfolioAddress"  required/>
+				<input type="url" id="portfolioAddress" name="portfolioAddress"  required placeholder="yourname"/>
 				<label id="sample" for="portfolioAddress">.sample.com</label>
 
 			</div>
@@ -41,16 +41,17 @@ title: kana's AUX challenge form
 			<div class="inputWrapper">
 				<label for="email">Email</label>
 				<input type="text" name="email" required/>
-				<p id="notes">NOTE: We'll never share your email, promise.</p>
+				<div id="notes">NOTE: We'll never share your email, promise.</div>
 			</div>
 			<div class="inputWrapper">
 				<label for="password">Password</label>
-				<input type="password" name="password" required />
+				<input type="password" id="password" name="password" required />
+				<input type="text" id="hiddenPassword" class="hidden" name="password" />
 			</div>
 			<div class="inputWrapper">
 				
 				<label for="showPassword" class="checkbox">
-					<input type="checkbox" name="showPassword" value="Show Password" id="showpasswordCheckbox"/>Show Password</label>
+					<input id="showPassword" type="checkbox" name="showPassword" value="Show Password" id="showpasswordCheckbox"/>Show Password</label>
 			</div>
 		
 	</fieldset>
@@ -65,23 +66,22 @@ title: kana's AUX challenge form
 		</div>
 		<!-- 4 crads -->
 		<div class="inputWrapper cards">
-			
-			<input type="radio" id="amexcard" name="amexcard">
+			<input type="radio" id="amexcard" name="cards">
 			<label for="amexcard" id="lamexcard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
-			<input type="radio" id="visaCard" name="visaCard">
+			<input type="radio" id="visaCard" name="cards">
 			<label for="visaCard" id="lvisaCard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
-			<input type="radio" id="discoverCard" name="discoverCard">
+			<input type="radio" id="discoverCard" name="cards">
 			<label for="discoverCard" id="ldiscoverCard"></lable>
 		</div>
 		<div class="inputWrapper cards">
 			
-			<input type="radio" id="masterCard" name="masterCard">
+			<input type="radio" id="masterCard" name="cards">
 			<label for="masterCard" id="lmasterCard"></lable>
 		</div>
 
@@ -137,6 +137,5 @@ title: kana's AUX challenge form
 </form> 
 
 </section>
-<footer>
-</footer>
+
 

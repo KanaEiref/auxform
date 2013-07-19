@@ -3,7 +3,9 @@ body {
   width: 100%;
   margin: 0px;
   font-family: "Antic Slab", "Times New Roman";
-  font-size: 100%; }
+  font-size: 100%;
+  max-width: 700px;
+  counter-reset: section; }
 
 .container {
   width: 90%;
@@ -16,17 +18,22 @@ header {
   border-top-left-radius: 10px 5px;
   border-top-right-radius: 10px 5px;
   background-color: #096079;
-  margin: 3% 0% 0% 0%;
+  margin: 3% auto 0 auto;
   padding: 3% 3% 3% 3%; }
   header h1 {
     color: #f1fcff;
     font-family: "Antic Slab", "Times New Roman";
-    font-size: 2em; }
+    font-size: 2em;
+    margin-left: 25px; }
   header h2 {
     color: #b3e3ff;
     font-family: "Lucida Grande", Arial, Verdana, sans-serif;
     font-size: 0.9em;
-    padding-top: 8px; }
+    padding-top: 8px;
+    margin-left: 25px; }
+
+section {
+  margin: 0 auto; }
 
 form {
   background-color: white;
@@ -39,25 +46,41 @@ form {
   color: #5a5a5a;
   /* this order is important, to override the above input padding-top value for showPassword Checkbox */
   /* end of fieldset */ }
-  form label[for="portfolioAddress"] {
+  form label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block; }
+  form input {
+    padding-top: 8px;
+    padding-bottom: 8px;
     width: 100%;
-    float: left; }
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 0 0px #cbcbcb; }
+  form label[for="portfolioAddress"] {
+    width: 100%; }
   form input[name="portfolioAddress"] {
+    vertical-align: middle;
     width: 60%;
-    float: left; }
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
   form label[id="sample"] {
+    vertical-align: middle;
     width: 40%;
     float: right;
-    margin-top: -27px;
-    margin-left: 20px;
-    padding-left: 20px;
     text-align: center;
-    /*background-color: $sampleBG;*/ }
-  form input, form select {
-    padding-top: 10px;
-    border-radius: 7px;
-    font-size: 1em;
-    width: 100%; }
+    background-color: #fafafa;
+    height: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: inset 0px 1px 0 0px #cbcbcb, inset 1px 0px #cbcbcb;
+    margin-top: 2px;
+    color: #a2a2b2; }
   form input[type="checkbox"] {
     /* these 2 linds below are for lining up with "Show Password" label on the same line*/
     margin-top: -1px;
@@ -65,22 +88,22 @@ form {
     float: left; }
   form fieldset {
     position: relative;
-    margin: 3% 3% 3% 3%;
+    margin: 10% 3% 3% 6%;
     background-color: #f3f5f5;
-    padding-top: 1%;
+    padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 3%;
-    border-radius: 8px;
+    border-radius: 5px;
     /* for cards */ }
     form fieldset > legend {
       font-family: "Antic Slab", "Times New Roman";
       color: #096079;
       font-size: 1.4em;
       position: absolute;
-      top: -35px;
+      top: -65px;
       left: -15px;
-      padding-bottom: 10px; }
+      padding: 20px; }
     form fieldset.portfoilioSec legend:before {
       content: "1"; }
     form fieldset.accountSec legend:before {
@@ -98,11 +121,11 @@ form {
       height: 25px;
       padding: 4px;
       padding-top: 5px;
-      margin-right: 25px;
+      margin-right: 18px;
       background: #52a3d4;
       border: 7px solid white;
       text-align: center;
-      margin-left: -50px; }
+      margin-left: -70px; }
     form fieldset input[name="password"] {
       /*float: left;*/ }
     form fieldset input[name="showPassword"] {
@@ -113,7 +136,8 @@ form {
       width: 50%;
       float: left; }
     form fieldset.paymentSec .cards {
-      float: left; }
+      float: left;
+      margin-top: 35px; }
     form fieldset input[type="radio"] {
       display: none; }
     form fieldset label[for="amexcard"] {
@@ -144,8 +168,6 @@ form {
       display: inline-block;
       padding: 0 0 0 0px;
       margin-left: 10px; }
-    form fieldset .cards {
-      margin-top: 15px; }
     form fieldset.paymentSec #securityCodeWrapper {
       clear: both;
       float: left;
@@ -252,3 +274,10 @@ label[for="cardback"].isNotAmexcard {
   padding: 0 0 0 0px;
   margin-left: 10px;
   margin-top: 15px; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.hidden {
+  display: none; }

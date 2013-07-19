@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       files: {
 
           dest: desPath + 'js/kanascript.min.js',
-          src: sourcePath + 'js/kanascript.js'
+          src: sourcePath + 'js/**/*.js'
           
         }
 
@@ -102,6 +102,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-jekyll');
 
+  //grunt.registerTask('default', ['jekyll', 'copy', 'sass', 'jshint']);
   grunt.registerTask('default', ['jekyll', 'copy', 'sass', 'jshint', 'uglify']);
 
 };
