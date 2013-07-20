@@ -69,7 +69,7 @@ form {
     border-bottom-right-radius: 0; }
   form label[id="sample"] {
     vertical-align: middle;
-    width: 40%;
+    width: 39%;
     float: right;
     text-align: center;
     background-color: #fafafa;
@@ -81,6 +81,10 @@ form {
     box-shadow: inset 0px 1px 0 0px #cbcbcb, inset 1px 0px #cbcbcb;
     margin-top: 2px;
     color: #a2a2b2; }
+  form input[type="radio"] + label {
+    opacity: 0.5; }
+  form input[type="radio"]:checked + label {
+    opacity: 1; }
   form input[type="checkbox"] {
     /* these 2 linds below are for lining up with "Show Password" label on the same line*/
     margin-top: -1px;
@@ -173,7 +177,8 @@ form {
       float: left;
       width: 30%; }
     form fieldset.paymentSec #backWrapper {
-      float: left; }
+      float: left;
+      margin-top: 21px; }
     form fieldset.paymentSec #monthWrapper {
       clear: both;
       float: left; }
@@ -264,7 +269,8 @@ label[for="cardback"].isAmexcard {
   display: inline-block;
   padding: 0 0 0 0px;
   margin-left: 10px;
-  margin-top: 15px; }
+  margin-top: 25px;
+  padding-top: 20px; }
 
 label[for="cardback"].isNotAmexcard {
   background: url("../images/sprite.png") no-repeat 0px -374px;
@@ -273,7 +279,8 @@ label[for="cardback"].isNotAmexcard {
   display: inline-block;
   padding: 0 0 0 0px;
   margin-left: 10px;
-  margin-top: 15px; }
+  margin-top: 25px;
+  padding-top: 20px; }
 
 .center {
   margin-left: auto;

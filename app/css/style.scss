@@ -116,7 +116,7 @@ form{
 
 	label[id="sample"]{
 		vertical-align: middle;
-		width: 40%;
+		width: 39%;
 		float: right;
 
 
@@ -133,6 +133,12 @@ form{
 		margin-top: 2px;
 		color: $noteColor;
 	}
+
+	input[type="radio"] + label{opacity:0.5}
+
+
+	input[type="radio"]:checked + label{opacity:1; }
+
 
 	
 
@@ -232,6 +238,7 @@ form{
 		/* for cards */
 		input[type="radio"]{
 			display: none;
+
 		}
 
 		label[for="amexcard"]
@@ -288,6 +295,7 @@ form{
 		&.paymentSec #backWrapper{
 
 			float: left;	
+			margin-top: 21px;
 		}
 
 		&.paymentSec #monthWrapper{
@@ -417,7 +425,8 @@ label[for="cardback"].isAmexcard{
 		    display:inline-block;
 		    padding: 0 0 0 0px;
 		    margin-left: 10px;
-		    margin-top: 15px;
+		    margin-top: 25px;
+		    padding-top: 20px;
 }
 label[for="cardback"].isNotAmexcard{
 			background: url('../images/sprite.png') no-repeat 0px -374px;
@@ -426,7 +435,8 @@ label[for="cardback"].isNotAmexcard{
 		    display:inline-block;
 		    padding: 0 0 0 0px;
 		    margin-left: 10px;
-		    margin-top: 15px;
+		    margin-top: 25px;
+		    padding-top: 20px;
 }
 
 .center

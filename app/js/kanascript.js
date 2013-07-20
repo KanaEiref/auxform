@@ -53,7 +53,8 @@
 	}
 
 
-	/* this function returns card type  */
+	/* this function returns card type  but it is not used because it tests the whole value
+	of the input box but I only needed the first few letters to be tested */
 	function creditCardType( cardNumber)
 	{
 		var amexReg = /^3[47][0-9]{13}$/,
@@ -150,61 +151,99 @@
 		}
 	});
 
+	function getCreditCardType(accountNumber)
+	{
+		//start without knowing the credit card type
+		var result = "unknown";
 
+		//first check for MasterCard
+		if (/^5[1-5]/.test(accountNumber))
+		{
+		result = "mastercard";}
 
-	$("#cardNumber").blur(function(){
+		//then check for Visa
+		else if (/^4/.test(accountNumber))
+		{
+		result = "visa";//discoverReg = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
+		}
+		else if (/^6(?:011|5)/.test(accountNumber))
+		{
+			result = "discover";
+		}
 
-		var cardNumber = $('#cardNumber').val(), 
-			cardType = creditCardType(cardNumber);
+		//then check for AmEx
+		else if (/^3[47]/.test(accountNumber))
+		{
+		result = "amex";
+		}
+		console.log(result);
+		return result;
+	}
 
-		$(this).removeClass();
+	function handleEvent(event)
+	{
+		var value = event.target.value; 
+
+		if (value === ''){
+			return;}
+
+		var cardType = getCreditCardType(value);		
+
+		$('#cardNumber').removeClass();
 
 		switch(cardType){
-			case 'amex': 
-				$('#lamexcard').fadeTo('slow',1);
-				$('#lvisaCard,#lmasterCard, #ldiscoverCard').fadeTo('slow', 0.1);
-				$('#lcardBack').removeClass('isNotamexcard').addClass('isAmexcard');
+			case 'amex':
+				$('#amexcard').prop("checked", true); 
+
+
 				$('#securityCode').on('blur', { name: cardType}, validateSecCode);
 				break;
 
 			case 'visa':
-			$('#lvisaCard').fadeTo('slow',1);
-				$('#lamexcard, #lmasterCard, #ldiscoverCard').fadeTo('slow', 0.1);
-				$('#lcardBack').removeClass('isAmexcard').addClass('isNotamexcard');
+
+				$('#visaCard').prop("checked", true); 
+
 				$('#securityCode').on('blur', { name: cardType}, validateSecCode);
 				break;
 
 			case 'discover':
-				$('#ldiscoverCard').fadeTo('slow', 1);
-				$('#lvisaCard, #lmasterCard, #lamexcard').fadeTo('slow', 0.2);
-				$('#lcardBack').removeClass('isAmexcard').addClass('isNotamexcard');
+				$('#discoverCard').prop("checked", true); 
 				$('#securityCode').on('blur', { name: cardType}, validateSecCode);
 				break;
 
-			case 'master':
-				$('#lmasterCard').fadeTo('slow',1);
-				$('#lvisaCard, #lamexcard, #ldiscoverCard').fadeTo('slow', 0.1);
-				$('#lcardBack').removeClass('isAmexcard').addClass('isNotamexcard');
+			case 'mastercard':
+				$('#masterCard').prop("checked", true); 
+				
 				$('#securityCode').on('blur', { name: cardType}, validateSecCode);
 				break;
 
 			default:
-				$('#lamexcard, #lvisaCard, #lmasterCard, #ldiscoverCard').fadeTo(200, 0.4);
-				$(this).removeClass().addClass('error');
+			//	$('#lamexcard, #lvisaCard, #lmasterCard, #ldiscoverCard').fadeTo(200, 0.4);
+				$('cardNumber').removeClass().addClass('error');
+				break;
 
 		}
-	});
-
-	$('#showPassword').click(function(){
-		console.log($('#password').val());
+	}
+	
+	$('#showPassword').change(function(){
+		$('#hiddenPassword').attr('readonly','readonly');
 		$('#hiddenPassword').val($('#password').val());
-		console.log($('#hiddenPassword').val());
-		//if ('#hiddenPassword'.visible)
-		$('#hiddenPassword').removeClass('hidden');
-		$('#hiddenPassword').show();
+		var isChecked = $(this).prop('checked');
+		if (isChecked) {
+			$('#password').hide();
+			$('#hiddenPassword').show();
+		}
+		else {
+			$('#password').show();
+			$('#hiddenPassword').hide();
+	}
 
 	});
 
-	
-	
+	document.addEventListener("DOMContentLoaded", function(){
+		var textbox = document.getElementById('cardNumber');
+		textbox.addEventListener("keyup", handleEvent, false);
+		textbox.addEventListener("blur", handleEvent, false);
+	}, false);	
+
 })();
