@@ -76,9 +76,12 @@
 		
 		<legend>Finally, enter your payment information <a href="#" id="paypal" > Use Paypal</a></legend> 
 		
-		<div class="inputWrapper" id="cardNumberWrapper">
-				<label for="cardNumber">Card number</label>
-				<input type="text" id="cardNumber" name="cardNumber" required/>
+		<div class="inputWrapperVal" id="cardNumberWrapper">
+				<label id="lcardNumber" for="cardNumber">Card number</label>
+
+				<input class="validatedFields" ype="text" id="cardNumber" name="cardNumber" required/>
+				<label id="vNumber" class="hidden"></label>
+
 		</div>
 		<!-- 4 crads -->
 		<div class="inputWrapper cards">
@@ -101,13 +104,15 @@
 			<label for="masterCard" id="lmasterCard"></label>
 		</div>
 
-		<div class="inputWrapper" id="securityCodeWrapper">
+		<div class="inputWrapperVal" id="securityCodeWrapper">
 			<label for="securityCode">Security code</label>
 			<input type="text" id="securityCode" name="securityCode" required />
+			<label id="vCode" ></label>
 		</div>
 		<div class="inputWrapper" id="backWrapper">
 			<input type="radio" name="cardback" />
 			<label for="cardback" id="lcardBack"></label>
+
 		</div>
 
 		<div class="inputWrapper" id="monthWrapper">
@@ -159,7 +164,7 @@
         </div> <!-- /container -->
         
           <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-        <script src="assets/js/kanascript.min.js"></script>
+        <script src="assets/js/kanascript.js"></script>
         
 
     </body>

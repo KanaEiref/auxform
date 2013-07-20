@@ -24,6 +24,13 @@ module.exports = function(grunt) {
           'dest': ''
         }]
       }
+      /*,
+      js:{
+        files: [{
+          'src': ['app/js/kanascript.js'],
+          'dest': ['assets/js/kanascript.js'],
+        }]
+      }  not working */
     },
 
     // Sass
@@ -47,7 +54,7 @@ module.exports = function(grunt) {
 
     // JavaScripts
 
-    uglify: {
+   uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
@@ -80,8 +87,11 @@ module.exports = function(grunt) {
         tasks: 'sass'
       },
       javascript: {
-        files: ['Gruntfile.js', sourcePath + 'js/*.js'],
-        tasks: ['jshint', 'uglify']
+        files: ['Gruntfile.js', sourcePath + 'js/*.js'] ,
+       // tasks: ['jshint', 'copy']
+
+         //above  commented out by kana
+       tasks: ['jshint', 'uglify']
 
       },
       jekyll: {
@@ -102,7 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-jekyll');
 
-  //grunt.registerTask('default', ['jekyll', 'copy', 'sass', 'jshint']);
+ // grunt.registerTask('default', ['jekyll', 'copy', 'sass', 'jshint']);
   grunt.registerTask('default', ['jekyll', 'copy', 'sass', 'jshint', 'uglify']);
 
 };

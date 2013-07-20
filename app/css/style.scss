@@ -30,7 +30,7 @@ body {
 	font-family: $serif;
 	font-size: 100%;
 	max-width: 700px;
-	counter-reset: section;
+	counter-reset: fieldset;
 	
 }
 
@@ -134,7 +134,7 @@ form{
 		color: $noteColor;
 	}
 
-	input[type="radio"] + label{opacity:0.5}
+	input[type="radio"] + label{opacity:0.35}
 
 
 	input[type="radio"]:checked + label{opacity:1; }
@@ -176,16 +176,10 @@ form{
 
 		}
 	
-		&.portfoilioSec legend:before
-			{ content: "1";	}
-
-		&.accountSec legend:before
-			{ content: "2";	}
-
-		&.paymentSec legend:before
-			{ content: "3";	}
-
+		
 		legend:before{
+				counter-increment: fieldset;
+  				content: counter(fieldset);
 				display: inline-block;
 				font-family: $numberFont;
 				font-size: 1em;
@@ -233,6 +227,7 @@ form{
 			
 			float: left;
 			margin-top: 35px;
+			padding-top:10px;
 		}
 
 		/* for cards */
@@ -296,6 +291,7 @@ form{
 
 			float: left;	
 			margin-top: 21px;
+			padding-top: 10px;
 		}
 
 		&.paymentSec #monthWrapper{
@@ -332,7 +328,7 @@ form{
 			height: 19px;
 		}
 
-		label#lock.pass{
+		.pass{
 			clear: both;
 			float: right;
 			background: url('../images/sprite.png') no-repeat -31px -499px;
@@ -341,7 +337,7 @@ form{
 
 		}
 
-		label#lock.notPass{
+		.notPass{
 			clear: both;
 			float: right;
 			background: none;
@@ -405,21 +401,21 @@ a[id="paypal"]{
 }	
 
 
-.inputWrapper{
-	padding-top: 10px;
-	padding-bottom: 10px;
-		
-}
 
 input:focus { border: 1px dotted black; }
-input.error, select.error{ border: 1px dotted red; }
+input.error, select.error{ 
+	border: 1px dotted red; 
+	
+}
 label.error {	
 	color: red;
-	font-style: italic
+	font-style: italic;
+	clear: both;
+			
 }
 
 label[for="cardback"].isAmexcard{
-			background: url('../images/sprite.png') no-repeat 0 -331px;;
+			background: url('../images/sprite.png') no-repeat 0 -331px;
 			width: 70px;
 			height: 33px;
 		    display:inline-block;
@@ -448,6 +444,35 @@ label[for="cardback"].isNotAmexcard{
 .hidden
 {
 	display: none;
+}
+
+.inputWrapperVal{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: relative;
+		
+}
+
+.errorImage{
+	
+			position: absolute;
+			top:50px;
+			right: 0px;
+			background: url('../images/sprite.png') no-repeat -2px -499px;
+
+			width: 19px;
+			height: 19px;
+}
+
+.passImage{
+			position: absolute;
+			top:50px;
+			right: 0px;
+			background: url('../images/sprite.png') no-repeat -31px -499px;
+
+			width: 19px;
+			height: 19px;
+
 }
 
 

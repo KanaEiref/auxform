@@ -5,7 +5,7 @@ body {
   font-family: "Antic Slab", "Times New Roman";
   font-size: 100%;
   max-width: 700px;
-  counter-reset: section; }
+  counter-reset: fieldset; }
 
 .container {
   width: 90%;
@@ -82,7 +82,7 @@ form {
     margin-top: 2px;
     color: #a2a2b2; }
   form input[type="radio"] + label {
-    opacity: 0.5; }
+    opacity: 0.35; }
   form input[type="radio"]:checked + label {
     opacity: 1; }
   form input[type="checkbox"] {
@@ -108,13 +108,9 @@ form {
       top: -65px;
       left: -15px;
       padding: 20px; }
-    form fieldset.portfoilioSec legend:before {
-      content: "1"; }
-    form fieldset.accountSec legend:before {
-      content: "2"; }
-    form fieldset.paymentSec legend:before {
-      content: "3"; }
     form fieldset legend:before {
+      counter-increment: fieldset;
+      content: counter(fieldset);
       display: inline-block;
       font-family: "Times New Roman";
       font-size: 1em;
@@ -141,7 +137,8 @@ form {
       float: left; }
     form fieldset.paymentSec .cards {
       float: left;
-      margin-top: 35px; }
+      margin-top: 35px;
+      padding-top: 10px; }
     form fieldset input[type="radio"] {
       display: none; }
     form fieldset label[for="amexcard"] {
@@ -178,7 +175,8 @@ form {
       width: 30%; }
     form fieldset.paymentSec #backWrapper {
       float: left;
-      margin-top: 21px; }
+      margin-top: 21px;
+      padding-top: 10px; }
     form fieldset.paymentSec #monthWrapper {
       clear: both;
       float: left; }
@@ -201,13 +199,13 @@ form {
       background: url("../images/sprite.png") no-repeat -60px -499px;
       width: 14px;
       height: 19px; }
-    form fieldset label#lock.pass {
+    form fieldset .pass {
       clear: both;
       float: right;
       background: url("../images/sprite.png") no-repeat -31px -499px;
       width: 19px;
       height: 19px; }
-    form fieldset label#lock.notPass {
+    form fieldset .notPass {
       clear: both;
       float: right;
       background: none;
@@ -248,10 +246,6 @@ a[id="paypal"] {
   float: right;
   display: inline; }
 
-.inputWrapper {
-  padding-top: 10px;
-  padding-bottom: 10px; }
-
 input:focus {
   border: 1px dotted black; }
 
@@ -260,7 +254,8 @@ input.error, select.error {
 
 label.error {
   color: red;
-  font-style: italic; }
+  font-style: italic;
+  clear: both; }
 
 label[for="cardback"].isAmexcard {
   background: url("../images/sprite.png") no-repeat 0 -331px;
@@ -288,3 +283,24 @@ label[for="cardback"].isNotAmexcard {
 
 .hidden {
   display: none; }
+
+.inputWrapperVal {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative; }
+
+.errorImage {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background: url("../images/sprite.png") no-repeat -2px -499px;
+  width: 19px;
+  height: 19px; }
+
+.passImage {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background: url("../images/sprite.png") no-repeat -31px -499px;
+  width: 19px;
+  height: 19px; }
